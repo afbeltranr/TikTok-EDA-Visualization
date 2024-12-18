@@ -1,83 +1,47 @@
-# 📊 League of Legends 2024 Competitive Game Analysis  
+# TikTok Claims Classification Project 🎥
 
-Welcome to the **League of Legends 2024 Competitive Game Data Analysis Project**! This repository is dedicated to exploring, analyzing, and building predictive models using Kaggle's 2024 League of Legends dataset.  
+At TikTok, our mission is to inspire creativity and bring joy. Our employees lead with curiosity and move at the speed of culture. Combined with our company's flat structure, we are given dynamic opportunities to make a real impact on a rapidly expanding company and grow our careers. 🚀
 
----
+## Project Background 📊
+TikTok users have the ability to submit reports that identify videos and comments that contain user claims. These reports identify content that needs to be reviewed by moderators. The process generates a large number of user reports that are challenging to consider in a timely manner.
 
-## 🎯 **Project Goals**  
+To address this, TikTok is working on the development of a predictive model that can determine whether a video contains a claim or offers an opinion. With a successful prediction model, TikTok can reduce the backlog of user reports and prioritize them more efficiently. ⚙️
 
-1. **Exploratory Data Analysis (EDA):**  
-   - Understand data patterns and distributions.  
-   - Identify key features influencing competitive game performance.  
-   - Visualize game statistics and trends.  
+## My Approach 🚀
+In this project, I conducted exploratory data analysis (EDA) on data for the claims classification project. I also used Tableau to create visuals for an executive summary to help non-technical stakeholders engage and interact with the data. 📊
 
-2. **Predictive Modeling:**  
-   - Develop machine learning models to predict match outcomes.  
-   - Evaluate models using relevant performance metrics.  
+### Steps Followed 🛠️
+1. **EDA and Cleaning**: I started by cleaning the dataset to ensure accuracy and reliability. This included handling missing values, removing duplicates, and transforming data types where necessary.
+2. **Visualization Selection and Creation**: I selected appropriate visualization types to explore the variables and relationships between them. These visualizations helped me gain insights and identify patterns in the data.
+3. **Creating Plots**: Using Tableau, I created various plots to visualize the data. These plots were essential in understanding the distribution, trends, and correlations within the dataset.
+4. **Sharing Results**: Finally, I compiled my findings into an executive summary to share with the TikTok team. This summary included key insights and actionable recommendations based on the data analysis. 📈
 
-3. **Skill Development:**  
-   - Enhance data analysis and modeling skills.  
-   - Practice continuous integration with Docker and GitHub Actions.  
-   - Build an end-to-end data project ready for portfolio presentation.  
+## Dataset Description 📑
+The dataset contains information about TikTok videos that have been reported for containing claims or opinions. Here is a summary of the dataset:
 
----
+| **Column Name**             | **Type** | **Description**                                                                                         |
+|-----------------------------|----------|---------------------------------------------------------------------------------------------------------|
+| #                           | int      | TikTok assigned number for video with claim/opinion.                                                    |
+| claim_status               | obj      | Whether the published video has been identified as an “opinion” or a “claim.”                            |
+| video_id                   | int      | Random identifying number assigned to video upon publication on TikTok.                                  |
+| video_duration_sec         | int      | How long the published video is measured in seconds.                                                    |
+| video_transcription_text   | obj      | Transcribed text of the words spoken in the published video.                                            |
+| verified_status            | obj      | Indicates the status of the TikTok user who published the video in terms of their verification.          |
+| author_ban_status          | obj      | Indicates the status of the TikTok user who published the video in terms of their permissions.           |
+| video_view_count           | float    | The total number of times the published video has been viewed.                                           |
+| video_like_count           | float    | The total number of times the published video has been liked by other users.                             |
+| video_share_count          | float    | The total number of times the published video has been shared by other users.                            |
+| video_download_count       | float    | The total number of times the published video has been downloaded by other users.                        |
+| video_comment_count        | float    | The total number of comments on the published video.                                                     |
 
-## 🗂 **Repository Structure**  
+You can find the dataset [here](https://docs.google.com/spreadsheets/d/1BTVomLOrzNRGtF4QGTwf86eVm5gOpwpE4Ai_F1NAHbo/template/preview?resourcekey=0-OGt7Jh_Vj5AcZaxwYvegpA). 📂
 
-```
+### Specific Project Deliverables 📝
+With this project, I gained valuable practice and applied new skills as I completed the following tasks:
+- Course 3 PACE Strategy Document to consider questions, details, and action items for each stage of the project scenario.
+- Answering the questions in the Jupyter notebook project file.
+- Cleaning the data and performing exploratory data analysis (EDA).
+- Creating data visualizations.
+- Creating an executive summary to share the results.
 
-📂 league-of-legends-analysis 
-├── data/ # Raw and processed data 
-├── notebooks/ # Jupyter notebooks for EDA and modeling 
-├── src/ # Custom scripts and functions 
-├── models/ # Trained models and results 
-├── reports/ # Documentation, visualizations, and insights 
-├── docker/ # Docker setup and configurations 
-├── tests/ # Unit and integration tests 
-├── config.yaml # Project configuration file 
-├── Dockerfile # Docker environment setup 
-└── README.md # Project overview and guide
-```
-## ⚙️ **Setup Instructions**  
-
-1. **Clone the Repository:**  
-   ```bash
-   git clone https://github.com/yourusername/league-of-legends-analysis.git
-   cd league-of-legends-analysis
-   ```  
-
-2. **Create and Run Docker Container:**
-
-```bash
-
-docker build -t lol-analysis .
-docker run -p 8888:8888 lol-analysis
-```
-3. Install dependencies
-4. Run Jupyter Notebooks.
-
-## 📌 **Key Milestones**
-
-1. **Data Cleaning and Preprocessing:** Ensure a clean and well-structured dataset.
-2. **EDA:** Conduct in-depth analysis and create compelling visualizations.
-3. **Feature Engineering:** Extract meaningful features for predictive models.
-4. **Model Development**: Train, evaluate, and tune models.
-5. **Reporting**: Summarize key insights in the learning journal.
-
-## 🚀 **Project Goals Tracker**
-
- * Complete initial EDA.
- * Create insightful visualizations.
- * Build and evaluate predictive models.
- * Document findings and push daily commits.
-
-## 🙌 **Contributions & Feedback**
-
-
-Feel free to fork this repository, open issues, or submit pull requests. Feedback is always welcome!
-
-Let's dive into data and unlock gaming insights! 🎮
-Let me know if you'd like further adjustments! 🚀
-
-
-
+This repository showcases these milestones and is indexed in my list of data projects on my portfolio. 🎯
