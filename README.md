@@ -36,6 +36,9 @@ The dataset contains information about TikTok videos that have been reported for
 
 You can find the dataset [here](https://docs.google.com/spreadsheets/d/1BTVomLOrzNRGtF4QGTwf86eVm5gOpwpE4Ai_F1NAHbo/template/preview?resourcekey=0-OGt7Jh_Vj5AcZaxwYvegpA). 📂
 
+
+To download the dataset here we use environment variables, as a way to securely 
+
 ### Specific Project Deliverables 📝
 With this project, I gained valuable practice and applied new skills as I completed the following tasks:
 - Course 3 PACE Strategy Document to consider questions, details, and action items for each stage of the project scenario.
