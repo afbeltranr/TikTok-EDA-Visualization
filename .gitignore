@@ -9,6 +9,12 @@ __pycache__/
 # Ignore service account JSON key
 gspread-for-ipynb-tiktok-3adba504e647.json
 
-# Ignore virtual environment folders
-env/
+# Ignore the virtual environment directory
 venv/
+
+# Ignore sensitive files
+secrets/
+
+# Ignore .env files if used for environment variables
+.env
+
