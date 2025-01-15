@@ -1,50 +1,91 @@
-# TikTok Claims Classification Project 🎥
+# 🎥 Video Claim vs Opinion Analysis Project
 
-At TikTok, our mission is to inspire creativity and bring joy. Our employees lead with curiosity and move at the speed of culture. Combined with our company's flat structure, we are given dynamic opportunities to make a real impact on a rapidly expanding company and grow our careers. 🚀
+## 📖 Introduction  
+This project aims to explore differences between videos classified as "claim" and "opinion" through **exploratory data analysis (EDA)**. The goal is to identify trends, user behaviors, and outliers that provide insights into how these two groups differ, particularly in terms of engagement metrics like view and like counts.
 
-## Project Background 📊
-TikTok users have the ability to submit reports that identify videos and comments that contain user claims. These reports identify content that needs to be reviewed by moderators. The process generates a large number of user reports that are challenging to consider in a timely manner.
+---
 
-To address this, TikTok is working on the development of a predictive model that can determine whether a video contains a claim or offers an opinion. With a successful prediction model, TikTok can reduce the backlog of user reports and prioritize them more efficiently. ⚙️
+## 🔍 Background  
+While this project includes a predictive modeling goal, the current stage is focused on **EDA** to better understand the dataset. EDA allows us to uncover patterns, spot anomalies, and build hypotheses that will guide the predictive model in the future.
 
-## My Approach 🚀
-In this project, I conducted exploratory data analysis (EDA) on data for the claims classification project. I also used Tableau to create visuals for an executive summary to help non-technical stakeholders engage and interact with the data. 📊
+---
+## 🖼️ Key Insights and Visualizations  
 
-### Steps Followed 🛠️
-1. **EDA and Cleaning**: I started by cleaning the dataset to ensure accuracy and reliability. This included handling missing values, removing duplicates, and transforming data types where necessary.
-2. **Visualization Selection and Creation**: I selected appropriate visualization types to explore the variables and relationships between them. These visualizations helped me gain insights and identify patterns in the data.
-3. **Creating Plots**: Using Tableau, I created various plots to visualize the data. These plots were essential in understanding the distribution, trends, and correlations within the dataset.
-4. **Sharing Results**: Finally, I compiled my findings into an executive summary to share with the TikTok team. This summary included key insights and actionable recommendations based on the data analysis. 📈
+### 1️⃣ **Distribution of Variables**  
+- 📊 Most variables are skewed to the right, which makes sense considering the nature of viral content.
 
-## Dataset Description 📑
-The dataset contains information about TikTok videos that have been reported for containing claims or opinions. Here is a summary of the dataset:
+![Variable Distribution Plot](img/variables_distribution.png)
+---
 
-| **Column Name**             | **Type** | **Description**                                                                                         |
-|-----------------------------|----------|---------------------------------------------------------------------------------------------------------|
-| #                           | int      | TikTok assigned number for video with claim/opinion.                                                    |
-| claim_status               | obj      | Whether the published video has been identified as an “opinion” or a “claim.”                            |
-| video_id                   | int      | Random identifying number assigned to video upon publication on TikTok.                                  |
-| video_duration_sec         | int      | How long the published video is measured in seconds.                                                    |
-| video_transcription_text   | obj      | Transcribed text of the words spoken in the published video.                                            |
-| verified_status            | obj      | Indicates the status of the TikTok user who published the video in terms of their verification.          |
-| author_ban_status          | obj      | Indicates the status of the TikTok user who published the video in terms of their permissions.           |
-| video_view_count           | float    | The total number of times the published video has been viewed.                                           |
-| video_like_count           | float    | The total number of times the published video has been liked by other users.                             |
-| video_share_count          | float    | The total number of times the published video has been shared by other users.                            |
-| video_download_count       | float    | The total number of times the published video has been downloaded by other users.                        |
-| video_comment_count        | float    | The total number of comments on the published video.                                                     |
+### 2️⃣ **User Verification and Content Type**  
+- 🔍 Most "claim" videos are uploaded by **unverified users**.  
+- ✅ Verified users tend to avoid posting claims, possibly due to stricter platform policies or reputational concerns.
 
-You can find the dataset [here](https://docs.google.com/spreadsheets/d/1BTVomLOrzNRGtF4QGTwf86eVm5gOpwpE4Ai_F1NAHbo/template/preview?resourcekey=0-OGt7Jh_Vj5AcZaxwYvegpA). 📂
+![Verification Status Plot](img/verification_status.png)
+
+---
+
+### 3️⃣ **View Count Distribution**  
+- 📊 Claim videos capture **99% of total views**, reflecting their viral nature.  
+- 🌟 Opinion videos, while present in nearly equal numbers, don't receive the same engagement.
+
+![View Count Distribution Plot](img/view_count_distribution.png)
+
+---
+
+### 4️⃣ **User Account Status**  
+- 🚫 Users under review or banned are more likely to upload claim videos.  
+- 📈 These users exhibit **higher median view counts**, suggesting they post more engaging or controversial content.
+
+![Account Status Plot](img/account_status.png)
+
+---
+
+### 5️⃣ **Outlier Detection**  
+- ⚡ Outliers were identified using **IQR and median-based methods**, with claim videos having some exceptional cases of virality.  
+
+| Variable             |   Claim |   Opinion |
+|:---------------------|--------:|----------:|
+| video_view_count     |    2343 |         0 |
+| video_like_count     |    3468 |         0 |
+| video_share_count    |    3732 |         0 |
+| video_download_count |    3733 |         0 |
+| video_comment_count  |    3882 |         0 |
+
+---
+
+## 🛠️ CI/CD and Google API Integration  
+This project incorporates **Continuous Integration/Continuous Delivery (CI/CD)** to ensure the code is tested on every commit.
+
+### How the Google Sheets API Connection Works:
+
+1. **Google Cloud Platform (GCP) Service Account**:  
+   - A service account is set up on GCP with access to the Google Sheets API.  
+   - The credentials for this account are saved securely as a JSON file in the virtual machine (Codespaces), **not committed to the repository**.  
+
+2. **Testing the Connection**:  
+   - The project uses CI/CD pipelines to test the connection.  
+   - The pipeline runs a script to authenticate using the credentials and verify that data can be downloaded from Google Sheets.  
+
+3. **Temporary Files in Codespaces**:  
+   - Any temporary files (e.g., downloaded credentials) stored in the virtual machine are fine to delete.  
+   - This is because the pipeline only executes **on every commit**, so these files are regenerated as needed during the testing phase.  
 
 
-To download the dataset here we use environment variables, as a way to securely 
 
-### Specific Project Deliverables 📝
-With this project, I gained valuable practice and applied new skills as I completed the following tasks:
-- Course 3 PACE Strategy Document to consider questions, details, and action items for each stage of the project scenario.
-- Answering the questions in the Jupyter notebook project file.
-- Cleaning the data and performing exploratory data analysis (EDA).
-- Creating data visualizations.
-- Creating an executive summary to share the results.
+---
 
-This repository showcases these milestones and is indexed in my list of data projects on my portfolio. 🎯
+## 🚀 Next Steps  
+1. Transition from EDA to predictive modeling.  
+2. Optimize the CI/CD process further for real-world deployment scenarios.  
+3. Add more insights as new trends are uncovered in the dataset.
+
+---
+
+## 📄 References  
+- Dataset Source: [Coursera Project Website](https://www.coursera.org/)  
+- Tools Used: Python, Pandas, Matplotlib, Seaborn, Codespaces, GCP.  
+
+---
+
+Thank you for checking out my project! 😊 Feel free to reach out with any feedback or suggestions. 🙌
