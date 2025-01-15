@@ -48,4 +48,4 @@ jobs:
 
       # Step 7: Run the test script
       - name: Run Google Sheets API Test
-        run: python test_google_api.py
+        run: python src/test_google_api.py
